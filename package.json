@@ -1,7 +1,7 @@
 {
   "name": "undora",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@10.12.4",
   "description": "A lightweight TypeScript library for seamless undo/redo functionality.",
   "author": "jinghaihan",
