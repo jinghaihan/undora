@@ -1,0 +1,66 @@
+{
+  "name": "undora",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.12.4",
+  "description": "A lightweight TypeScript library for seamless undo/redo functionality.",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/undora#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/undora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/undora/issues"
+  },
+  "keywords": [
+    "redo",
+    "undo"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "typecheck": "tsc",
+    "test": "vitest",
+    "lint": "eslint",
+    "commit": "czg",
+    "deps": "taze major -I",
+    "release": "bumpp && pnpm publish --no-git-checks",
+    "catalog": "pncat",
+    "prepare": "npx simple-git-hooks",
+    "bootstrap": "pnpm install",
+    "preinstall": "npx only-allow pnpm",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "@octohash/tsconfig": "catalog:dev",
+    "@types/node": "catalog:types",
+    "bumpp": "catalog:cli",
+    "czg": "catalog:cli",
+    "eslint": "catalog:lint",
+    "lint-staged": "catalog:lint",
+    "pncat": "catalog:cli",
+    "simple-git-hooks": "catalog:lint",
+    "taze": "catalog:cli",
+    "typescript": "catalog:dev",
+    "unbuild": "catalog:build",
+    "vitest": "catalog:test"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
