@@ -39,7 +39,7 @@ export class Undora<T> {
     finally {
       this.transactionDepth--
       if (this.transactionDepth === 0 && this.transactionCache !== null) {
-        this.pushState(this.transactionCache, { silent: true })
+        this.pushState(this.transactionCache)
         this.transactionCache = null
       }
     }
